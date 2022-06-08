@@ -8,7 +8,6 @@ const isPortReachable = require('is-port-reachable');
 const pAny = require('p-any');
 const pTimeout = require('p-timeout');
 const prependHttp = require('prepend-http');
-const routerIps = require('router-ips');
 const URL = require('url-parse');
 
 const dnsLookupP = promisify(dns.lookup);
@@ -24,12 +23,6 @@ const checkHttp = async (url, timeout) => {
 		});
 	} catch {
 		return false;
-	}
-
-	if (response.headers && response.headers.location) {
-		const url = new URL(response.headers.location);
-		const hostname = url.hostname.replace(/^\[/, '').replace(/]$/, ''); // Strip [] from IPv6
-		return !routerIps.has(hostname);
 	}
 
 	return true;
@@ -52,7 +45,7 @@ const isTargetReachable = timeout => async target => {
 		return false;
 	}
 
-	if (!address || routerIps.has(address)) {
+	if (!address) {
 		return false;
 	}
 

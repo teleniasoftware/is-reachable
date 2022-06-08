@@ -46,7 +46,6 @@
 		"p-any": "^3.0.0",
 		"p-timeout": "^3.2.0",
 		"prepend-http": "^3.0.1",
-		"router-ips": "^1.0.0",
 		"url-parse": "^1.5.3"
 	},
 	"devDependencies": {
@@ -54,5 +53,8 @@
 		"tsd": "^0.13.1",
 		"xo": "^0.34.0"
 	},
-	"browser": "browser.js"
+	"browser": "browser.js",
+	"volta": {
+		"node": "14.19.3"
+	}
 }
