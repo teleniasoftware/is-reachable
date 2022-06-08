@@ -1,5 +1,5 @@
 {
-	"name": "is-reachable",
+	"name": "@telenia/is-reachable",
 	"version": "5.2.1",
 	"description": "Check if servers are reachable",
 	"license": "MIT",
